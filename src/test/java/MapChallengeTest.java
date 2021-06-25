@@ -17,7 +17,7 @@ class MapChallengeTest {
                             String acc,
                             List<Map<String, String>> expectedResult) {
 
-        List<Map<String, String>> result = MapChallenge.transform(data, agg, acc);
+        List<Map<String, String>> result = MapIterativeChallenge.transform(data, agg, acc);
         assertIterableEquals(expectedResult, result);
     }
 
@@ -41,20 +41,20 @@ class MapChallengeTest {
 
         return Stream.of(
                 Arguments.of(carInventory, "carBrand", "numberOfItemsAvailable", List.of(
-                        Map.of("carBrand", "Toyota",
-                                "numberOfItemsAvailable", "12"),
+                        Map.of("carBrand", "Ford",
+                                "numberOfItemsAvailable", "37"),
                         Map.of("carBrand", "Nissan",
                                 "numberOfItemsAvailable", "18"),
-                        Map.of("carBrand", "Ford",
-                                "numberOfItemsAvailable", "37")
+                        Map.of("carBrand", "Toyota",
+                                "numberOfItemsAvailable", "12")
                 )),
                 Arguments.of(carInventory, "carType", "numberOfItemsAvailable", List.of(
                         Map.of("carType", "Convertible",
                                 "numberOfItemsAvailable", "8"),
-                        Map.of("carType", "Sedane",
-                                "numberOfItemsAvailable", "13"),
                         Map.of("carType", "SUV",
-                                "numberOfItemsAvailable", "46")
+                                "numberOfItemsAvailable", "46"),
+                        Map.of("carType", "Sedane",
+                                "numberOfItemsAvailable", "13")
                 ))
         );
     }

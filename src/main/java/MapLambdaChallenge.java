@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MapChallenge {
+public class MapLambdaChallenge {
 
     public static List<Map<String, String>> transform(
             final List<Map<String, String>> data,
